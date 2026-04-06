@@ -1,168 +1,143 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
+<html lang="ar" dir="rtl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sniper PRO | Installer</title>
+    <title>⚡ Scraper GOD MODE V5</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        :root {
-            --primary: #ff0055;
-            --bg: #0a0a0a;
-            --card: #151515;
-            --text: #ffffff;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background: var(--card);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255, 0, 85, 0.2);
-            border: 1px solid #333;
-            text-align: center;
-        }
-
-        h1 {
-            color: var(--primary);
-            margin-top: 0;
-            font-size: 32px;
-            text-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
-        }
-
-        p {
-            color: #aaa;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .step-box {
-            background: #000;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 0;
-            border-right: 4px solid var(--primary);
-            text-align: right;
-        }
-
-        .step-box h3 {
-            margin: 0 0 10px 0;
-            color: #fff;
-        }
-
-        /* زرار السحب للكمبيوتر */
-        .drag-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff0055, #ff0088);
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 18px;
-            cursor: grab;
-            box-shadow: 0 0 20px rgba(255, 0, 85, 0.4);
-            transition: 0.3s;
-            margin: 15px 0;
-        }
-
-        .drag-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 0, 85, 0.6);
-        }
-
-        /* كود الموبايل */
-        textarea {
-            width: 90%;
-            height: 80px;
-            background: #222;
-            color: #0f0;
-            border: 1px solid #444;
-            padding: 10px;
-            border-radius: 10px;
-            font-family: monospace;
-            direction: ltr;
-            resize: none;
-            margin-top: 10px;
-        }
-
-        .copy-btn {
-            background: #fff;
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-
-        .copy-btn:hover {
-            background: var(--primary);
-            color: #fff;
-        }
+        :root { --bg: #020617; --card: #1e293b; --primary: #3b82f6; --success: #22c55e; }
+        body { background: var(--bg); color: white; font-family: system-ui; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .container { width: 100%; max-width: 800px; background: var(--card); padding: 25px; border-radius: 20px; box-shadow: 0 0 50px rgba(59, 130, 246, 0.2); border: 1px solid #334155; }
+        .input-row { display: flex; gap: 10px; margin-bottom: 20px; }
+        input, textarea { flex: 1; padding: 15px; border-radius: 12px; border: 2px solid #334155; background: #0f172a; color: white; font-size: 14px; outline: none; }
+        button { padding: 15px 25px; border-radius: 12px; border: none; background: var(--primary); color: white; font-weight: bold; cursor: pointer; }
+        button:hover { background: #2563eb; transform: scale(1.05); }
+        .magic-panel { background: rgba(59, 130, 246, 0.1); border: 1px dashed var(--primary); padding: 15px; border-radius: 12px; margin-bottom: 20px; text-align: right; }
+        code { display: block; background: #000; padding: 10px; color: #6ee7b7; border-radius: 8px; margin: 10px 0; cursor: pointer; font-size: 12px; direction: ltr; }
+        .manual-section { margin-top: 20px; border-top: 1px solid #334155; padding-top: 20px; }
+        #results { display: grid; gap: 10px; margin-top: 20px; }
+        .link-card { background: #334155; padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; cursor: pointer; }
+        .link-card:hover { border: 1px solid var(--success); background: #3f4e64; }
+        .player-box { width: 100%; height: 450px; background: #000; margin-top: 20px; border-radius: 15px; overflow: hidden; display: none; }
+        iframe, video { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🎯 Sniper PRO Setup</h1>
-    <p>بما إنك شغال بأقوى كود اختراق للمتصفح، الملف ده هيساعدك تثبته في ثواني عشان يفضل معاك على طول.</p>
-
-    <div class="step-box">
-        <h3>💻 لمستخدمي الكمبيوتر (اللاب توب):</h3>
-        <p>عشان متتعبش نفسك، اسحب الزرار الأحمر اللي تحت ده بالماوس، وارميه فوق في شريط العلامات المرجعية (Bookmarks Bar) بتاع المتصفح.</p>
-        <div style="text-align: center;">
-            <a class="drag-btn" href="javascript:(function(){if(window.sniper)return;window.sniper=true;let p=document.createElement('div');p.style='position:fixed;bottom:20px;left:20px;z-index:9999999;background:#000;color:#fff;padding:15px;border-radius:10px;border:2px solid #ff0055;font-family:sans-serif;direction:ltr;max-width:350px;box-shadow:0 10px 30px rgba(255,0,85,0.5);';p.innerHTML='<h3 style=&quot;margin:0 0 10px;color:#ff0055;text-align:center;&quot;>🎯 Sniper PRO</h3><div id=&quot;links&quot; style=&quot;max-height:250px;overflow-y:auto;font-size:12px;&quot;></div><button onclick=&quot;this.parentElement.remove();window.sniper=false;&quot; style=&quot;width:100%;padding:8px;margin-top:10px;background:#333;color:#fff;border:none;border-radius:5px;cursor:pointer;&quot;>Close / إغلاق</button>';document.body.appendChild(p);let box=document.getElementById('links');let s=new Set();function pushLink(url,type){if(!url||s.has(url)||url.startsWith('blob:'))return;s.add(url);let d=document.createElement('div');d.style='background:#111;margin-bottom:8px;padding:8px;border-radius:5px;border-left:3px solid #ff0055;word-break:break-all;';d.innerHTML=`<strong style=&quot;color:#0f0;&quot;>[${type}]</strong><br><a href=&quot;${url}&quot; target=&quot;_blank&quot; style=&quot;color:#fff;text-decoration:none;&quot;>${url.substring(0,60)}...</a><br><button onclick=&quot;navigator.clipboard.writeText(\'${url}\');this.innerText=\'Copied!\';&quot; style=&quot;margin-top:5px;background:#ff0055;color:#fff;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:11px;&quot;>Copy Link</button>`;box.prepend(d);}const oldFetch=window.fetch;window.fetch=async function(...a){let u=typeof a[0]==='string'?a[0]:(a[0]?.url||'');if(/\.(m3u8|mpd|mp4|flv|ts)(\?|$)/i.test(u))pushLink(u,'Network Fetch');return oldFetch.apply(this,a);};const oldXhr=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(typeof u==='string'&&/\.(m3u8|mpd|mp4|flv|ts)(\?|$)/i.test(u))pushLink(u,'Network XHR');oldXhr.apply(this,arguments);};setInterval(()=>{document.querySelectorAll('video').forEach(v=>{if(v.src)pushLink(v.src,'Video Tag');v.querySelectorAll('source').forEach(src=>pushLink(src.src,'Source Tag'));});document.querySelectorAll('iframe').forEach(f=>{if(f.src&&!f.src.includes('google')&&!f.src.includes('about:blank'))pushLink(f.src,'Iframe Player');});},2500);pushLink('Sniper is active. Play the video now...','System');})();" title="اسحبني لشريط العلامات فوق">
-                🎯 قناص الروابط
-            </a>
-        </div>
-        <p style="text-align: center; color: #ff0055; font-size: 13px;">(بعد ما تسحبه، افتح صفحة الماتش ودوس عليه من الشريط فوق)</p>
+    <h2 style="text-align:center; color: var(--primary);">🚀 Scraper GOD MODE <small>V5</small></h2>
+    
+    <div class="input-row">
+        <input id="urlInput" placeholder="حط لينك الموقع (مثلاً كورة لايف)">
+        <button onclick="autoScrape()">سحب آلي</button>
     </div>
 
-    <div class="step-box">
-        <h3>📱 لمستخدمي الموبايل:</h3>
-        <p>دوس على زرار النسخ، وروح اعمل إشارة مرجعية (Bookmark) في متصفحك وحط الكود ده مكان الرابط.</p>
-        <textarea id="mobileCode" readonly>javascript:(function(){if(window.sniper)return;window.sniper=true;let p=document.createElement('div');p.style='position:fixed;bottom:20px;left:20px;z-index:9999999;background:#000;color:#fff;padding:15px;border-radius:10px;border:2px solid #ff0055;font-family:sans-serif;direction:ltr;max-width:350px;box-shadow:0 10px 30px rgba(255,0,85,0.5);';p.innerHTML='<h3 style="margin:0 0 10px;color:#ff0055;text-align:center;">🎯 Sniper PRO</h3><div id="links" style="max-height:250px;overflow-y:auto;font-size:12px;"></div><button onclick="this.parentElement.remove();window.sniper=false;" style="width:100%;padding:8px;margin-top:10px;background:#333;color:#fff;border:none;border-radius:5px;cursor:pointer;">Close / إغلاق</button>';document.body.appendChild(p);let box=document.getElementById('links');let s=new Set();function pushLink(url,type){if(!url||s.has(url)||url.startsWith('blob:'))return;s.add(url);let d=document.createElement('div');d.style='background:#111;margin-bottom:8px;padding:8px;border-radius:5px;border-left:3px solid #ff0055;word-break:break-all;';d.innerHTML=`<strong style="color:#0f0;">[${type}]</strong><br><a href="${url}" target="_blank" style="color:#fff;text-decoration:none;">${url.substring(0,60)}...</a><br><button onclick="navigator.clipboard.writeText('${url}');this.innerText='Copied!';" style="margin-top:5px;background:#ff0055;color:#fff;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:11px;">Copy Link</button>`;box.prepend(d);}const oldFetch=window.fetch;window.fetch=async function(...a){let u=typeof a[0]==='string'?a[0]:(a[0]?.url||'');if(/\.(m3u8|mpd|mp4|flv|ts)(\?|$)/i.test(u))pushLink(u,'Network Fetch');return oldFetch.apply(this,a);};const oldXhr=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(typeof u==='string'&&/\.(m3u8|mpd|mp4|flv|ts)(\?|$)/i.test(u))pushLink(u,'Network XHR');oldXhr.apply(this,arguments);};setInterval(()=>{document.querySelectorAll('video').forEach(v=>{if(v.src)pushLink(v.src,'Video Tag');v.querySelectorAll('source').forEach(src=>pushLink(src.src,'Source Tag'));});document.querySelectorAll('iframe').forEach(f=>{if(f.src&&!f.src.includes('google')&&!f.src.includes('about:blank'))pushLink(f.src,'Iframe Player');});},2500);pushLink('Sniper is active. Play the video now...','System');})();</textarea>
-        <button class="copy-btn" onclick="copySniperCode(this)">نسخ الكود بالكامل</button>
+    <div class="magic-panel">
+        <strong>💡 لو السحب الآلي فشل (بسبب حماية الموقع):</strong><br>
+        1. افتح الموقع وشغل الماتش.<br>
+        2. دوس F12 واكتب الكود ده في الـ Console:<br>
+        <code onclick="copyCode()">copy(window.location.href + '\n' + Array.from(document.querySelectorAll('iframe, video, source')).map(x =&gt; x.src).join('\n'))</code>
+        3. ارجع هنا وحط اللي نسخته في المربع اللي تحت ↓
     </div>
 
+    <div class="manual-section">
+        <textarea id="manualInput" rows="3" placeholder="حط الروابط المنسوخة هنا..."></textarea>
+        <button onclick="processManual()" style="background: var(--success); width: 100%; margin-top: 10px;">⚡ تشغيل الروابط المنسوخة</button>
+    </div>
+
+    <div id="status" style="text-align:center; margin: 15px 0;"></div>
+    <div id="results"></div>
+
+    <div id="playerBox" class="player-box">
+        <video id="videoPlayer" controls="" style="display:none;"></video>
+        <iframe id="iframePlayer" style="display:none;"></iframe>
+    </div>
 </div>
 
 <script>
-function copySniperCode(btn) {
-    const code = document.getElementById('mobileCode').value;
-    const textArea = document.createElement("textarea");
-    textArea.value = code;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
+// دالة السحب الآلي باستخدام بروكسي بديل
+async function autoScrape() {
+    const url = document.getElementById('urlInput').value.trim();
+    const status = document.getElementById('status');
+    if(!url) return alert("فين الرابط؟");
+
+    status.innerHTML = "🌀 جاري محاولة كسر الحماية...";
+    document.getElementById('results').innerHTML = "";
+
+    try {
+        // استخدام بروكسي corsproxy.io لأنه أسرع في التحويلات
+        const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
+        const html = await res.text();
+        parseAndDisplay(html);
+        status.innerHTML = "✅ فحص آلي مكتمل";
+    } catch (e) {
+        status.innerHTML = "❌ الموقع محمي جداً.. استخدم الطريقة اليدوية ↑";
+    }
+}
+
+// دالة معالجة الروابط المنسوخة (دي اللي هتجيب اللينك من الـ Console)
+function processManual() {
+    const input = document.getElementById('manualInput').value;
+    if(!input) return alert("حط الروابط اللي نسختها الأول!");
+    parseAndDisplay(input);
+    document.getElementById('status').innerHTML = "✅ تم استخراج الروابط يدوياً";
+}
+
+function parseAndDisplay(text) {
+    const results = document.getElementById('results');
+    results.innerHTML = "";
     
-    btn.innerText = "تم النسخ بنجاح! ✅";
-    btn.style.background = "#ff0055";
-    btn.style.color = "#fff";
+    // Regex مطور لصيد M3U8 و iFrame
+    const m3u8Regex = /(https?:\/\/[^\s"'<>]+\.m3u8[^\s"'<>]*)/gi;
+    const m3u8s = text.match(m3u8Regex) || [];
     
-    setTimeout(() => {
-        btn.innerText = "نسخ الكود بالكامل";
-        btn.style.background = "#fff";
-        btn.style.color = "#000";
-    }, 2000);
+    // تتبع الـ iFrames لو النص HTML
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, "text/html");
+    const iframes = Array.from(doc.querySelectorAll('iframe')).map(i => i.src).filter(s => s);
+
+    const allLinks = [...new Set([...m3u8s, ...iframes])];
+
+    if(allLinks.length === 0) {
+        results.innerHTML = "<p style='color:orange'>لم يتم العثور على روابط مباشرة. تأكد من نسخ الكود من صفحة المشغل الحقيقية.</p>";
+        return;
+    }
+
+    allLinks.forEach(link => {
+        const isM3u8 = link.toLowerCase().includes('m3u8');
+        const div = document.createElement('div');
+        div.className = 'link-card';
+        div.innerHTML = `
+            <span style="font-size:12px; color:#cbd5e1; direction:ltr; overflow:hidden;">${link.substring(0,40)}...</span>
+            <span style="color:${isM3u8?'#22c55e':'#eab308'}">${isM3u8?'M3U8':'SERVER'}</span>
+        `;
+        div.onclick = () => play(link, isM3u8);
+        results.appendChild(div);
+    });
+}
+
+function play(url, isM3u8) {
+    const box = document.getElementById('playerBox');
+    const v = document.getElementById('videoPlayer');
+    const i = document.getElementById('iframePlayer');
+    box.style.display = "block";
+    
+    if(isM3u8) {
+        i.style.display="none"; v.style.display="block";
+        if(Hls.isSupported()){
+            const hls = new Hls(); hls.loadSource(url); hls.attachMedia(v);
+            hls.on(Hls.Events.MANIFEST_PARSED, ()=>v.play());
+        }
+    } else {
+        v.style.display="none"; i.style.display="block"; i.src = url;
+    }
+    box.scrollIntoView({behavior:'smooth'});
+}
+
+function copyCode() {
+    const code = document.querySelector('code').innerText;
+    navigator.clipboard.writeText(code);
+    alert("تم نسخ الكود! حطه في Console الموقع الهدف");
 }
 </script>
 
-</body>
-</html>
+</body></html>
